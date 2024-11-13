@@ -1,0 +1,12 @@
+# All folders
+*/
+
+# Generated files
+*.lock
+*_lock.*
+*.json
+
+# Bazel symlinks
+bazel-*
+external
+
