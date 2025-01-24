@@ -16,9 +16,9 @@ git_override(
 
 bazel_dep(name = "platforms", version = "0.0.10")
 bazel_dep(name = "pybind11_bazel", version = "2.13.6")
-bazel_dep(name = "protobuf", version = "3.19.0")
+bazel_dep(name = "protobuf", version = "29.3")
 
-bazel_dep(name = "rules_python", version = "0.37.2")
+bazel_dep(name = "rules_python", version = "1.1.0")
 python = use_extension("@rules_python//python/extensions:python.bzl", "python")
 
 # We next initialize the python toolchain using the extension.
@@ -26,12 +26,12 @@ python = use_extension("@rules_python//python/extensions:python.bzl", "python")
 python.toolchain(
     configure_coverage_tool = True,
     is_default = True,
-    python_version = "3.10",
+    python_version = "3.12",
 )
 pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
 pip.parse(
     hub_name = "pip",
-    python_version = "3.10",
+    python_version = "3.12",
     requirements_lock = "//:requirements_lock.txt",
     # requirements_windows = "//:requirements_windows.txt",
 )
