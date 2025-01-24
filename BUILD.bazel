@@ -1,5 +1,8 @@
 load("@rules_python//python:pip.bzl", "compile_pip_requirements")
 
+// run `bazel run :requirements.update` to update. The
+// command will fail if the corresponding lock-file does not
+// already exist. If so, `touch requirements_lock.txt" first.
 compile_pip_requirements(
     name = "requirements",
     src = "requirements.in",
